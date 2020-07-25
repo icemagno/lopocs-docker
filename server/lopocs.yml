@@ -1,0 +1,14 @@
+flask:
+    DEBUG: true
+    LOG_LEVEL: debug
+    PG_HOST: lopocs-db
+    PG_NAME: lopocs
+    PG_PORT: 5432
+    PG_USER: postgres
+    PG_PASSWORD: admin
+    CACHE_DIR: /lopocs/cache
+    PG_COLUMN: pa
+    PG_TABLE: patchs
+    DEPTH: 6
+    USE_MORTON: true
+    STATS: False    
