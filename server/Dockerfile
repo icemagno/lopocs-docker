@@ -1,7 +1,9 @@
 FROM debian:buster-slim
 MAINTAINER magno.mabreu@gmail.com
 
-RUN mkdir /home/lopocs && mkdir /home/lopocs/install
+RUN mkdir -p /home/lopocs/install && \
+	mkdir -p /lopocs/cache
+	
 ENV PROJ_LIB="/usr/local/share/proj/"
 ENV FLASK_APP=lopocs
 
@@ -127,9 +129,9 @@ RUN cd /home/lopocs/install && \
 	cd PDAL && \
 	mkdir build && \
 	cd build && \
-	cmake -G Ninja -DLazperf_DIR=/usr/local/ -DWITH_LAZPERF=ON .. && \
-	ninja && \
-	ninja install
+	cmake -DLazperf_DIR=/usr/local/ -DWITH_LAZPERF=ON .. && \
+	make && \
+	make install
 
 
 RUN pip3 install 'Werkzeug==0.16.0' && \
@@ -153,7 +155,7 @@ RUN	cd /home/lopocs/install/lopocs/ && \
 #   pip install .[dev]	
 
 
-WORKDIR /home/lopocs/install/lopocs
+WORKDIR /home/lopocs/
 
 RUN lopocs check
 

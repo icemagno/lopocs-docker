@@ -1,6 +1,6 @@
 #! /bin/sh
 
-#docker ps -a | awk '{ print $1,$2 }' | grep magnoabreu/lopocs-db:1.0 | awk '{print $1 }' | xargs -I {} docker rm -f {}
+docker ps -a | awk '{ print $1,$2 }' | grep magnoabreu/lopocs-db:1.0 | awk '{print $1 }' | xargs -I {} docker rm -f {}
 docker rmi magnoabreu/lopocs-db:1.0
 docker build --tag=magnoabreu/lopocs-db:1.0 --rm=true .
 
@@ -18,6 +18,12 @@ docker run --name lopocs-db --hostname=lopocs-db \
 
 docker network connect sisgeodef lopocs-db
 docker network connect apolo lopocs-db
+
+cp ./*.sql /srv/lopocs-db/
+echo "Waiting for server..."
+sleep 10
+
+# docker exec lopocs-db psql "host='localhost' dbname='lopocs' user='postgres' password='admin'"  -a -f /var/lib/postgresql/create-structs-srid-4326.sql
 
 
 

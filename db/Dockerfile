@@ -175,5 +175,5 @@ RUN cd /home/lopocs/install && \
 	ninja && \
 	ninja install
 
-
+WORKDIR /home/lopocs/
 
