@@ -11,11 +11,10 @@
     },    
 	{
       "type":"writers.pgpointcloud",
-      "connection":"dbname=lopocs host='localhost' user='postgres' password='admin'",
+      "connection":"dbname=efestus host='efestus' user='postgres' password='admin'",
       "table":"congonhas",
       "srid":"4326",
-      "overwrite":"true",
-      "compression":"lazperf"
+      "overwrite":"true"
     }
   ]
 }
