@@ -1,0 +1,16 @@
+{
+  "pipeline":[
+    {
+      "type":"readers.las",
+      "filename":"1815_thin.laz",
+	  "compression":"lazperf"
+    },
+    {
+      "type":"writers.pgpointcloud",
+      "connection":"dbname=lopocs host='localhost' user='postgres' password='admin'",
+      "table":"patchs",
+      "compression":"lazperf",
+      "overwrite":"true"
+    }
+  ]
+}

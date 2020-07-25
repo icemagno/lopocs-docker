@@ -137,12 +137,13 @@ RUN cd /home/lopocs/install && \
 RUN pip3 install 'Werkzeug==0.16.0' && \
     pip3 install 'numpy==1.16.0' &&  \
 	pip3 install pdal && \
+	pip3 install wheel && \
     pip3 install https://projects.unbit.it/downloads/uwsgi-lts.tar.gz
 
 
 RUN cd /home/lopocs/install && \
-    git clone https://github.com/Oslandia/lopocs && \
-	mkdir /lopocs/cache 
+    git clone https://github.com/Oslandia/lopocs
+	
 	
 # Some version adjusts	
 COPY ./setup.py /home/lopocs/install/lopocs/
