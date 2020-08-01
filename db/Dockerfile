@@ -61,12 +61,12 @@ RUN cd /home/lopocs/install/ && \
 
 
 # GDAL
-RUN cd /home/lopocs/install && \
-    git clone https://github.com/OSGeo/GDAL.git && \
-	cd GDAL/gdal && \
-	./configure --with-proj=/usr/local && \
-	make && \
-	make install 
+#RUN cd /home/lopocs/install && \
+#    git clone https://github.com/OSGeo/GDAL.git && \
+#	cd GDAL/gdal && \
+#	./configure --with-proj=/usr/local && \
+#	make && \
+#	make install 
 	
 
 
