@@ -9,3 +9,7 @@ docker run --name lopocs-orig --hostname lopocs-orig -d -p 5000:5000 -v /home/ma
 
 docker network connect sisgeodef lopocs-orig
 docker network connect apolo lopocs-orig
+
+
+
+lopocs load --srid 4326 --cesium --work-dir /lopocs/congonhas --table lp_congonhas /lopocs/conf/congonhas.las
