@@ -1,0 +1,4 @@
+FROM camptocamp/lopocs:georchestra-20.0.3-dev
+MAINTAINER magno.mabreu@gmail.com
+
+COPY ./lopocs.yml /etc/lopocs/

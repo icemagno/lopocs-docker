@@ -9,7 +9,6 @@ cp ./lopocs.yml /srv/lopocs-conf/
 
 docker run --name lopocs --hostname=lopocs \
 -v /srv/lopocs-home/:/home/lopocs \
--v /etc/localtime:/etc/localtime:ro \
 -v /srv/lopocs-conf/:/lopocs/conf \
 -p 36500:5000 \
 -d magnoabreu/lopocs:1.0
